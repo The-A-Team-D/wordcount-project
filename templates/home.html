@@ -1,0 +1,13 @@
+<h1><center>Welcome to Word Counter</center></h1>
+
+
+<form action = {% url 'counts'%} > {% csrf_token %}
+    <h2>Enter your words here: </h2>
+    <textarea cols='80' rows ='10' name = "fulltext"></textarea>
+    
+    <input type = 'submit' value = 'Submit'  />
+
+
+</form>
+<h3><a href = {% url 'about' %}>About</a></h3>
+

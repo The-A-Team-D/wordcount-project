@@ -1,0 +1,31 @@
+<h1><center><u>Your Output</u></center></h1>
+<h1> Your Text : </h1>
+<h2 style = "color:red"><i>{{ text }}</i></h2>
+
+<h1> There are {{ count}} words in your text. </h1>
+
+
+
+<table align = "center" style = "width:50%"> 
+
+<tr>
+<th style = "text-align:left"><h2><u>Word</u></h2></th>
+<th style = "text-align:left"><h2><u>Count</u></h2></th>
+
+</tr>
+
+{% for word,count in sortedword %}
+
+<tr>
+<td>{{word}}</td>
+<td>{{count}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+
+<h3><a href = "{% url 'home' %}">start again</a></h3>
