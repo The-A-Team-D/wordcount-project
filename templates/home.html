@@ -1,13 +1,112 @@
-<h1><center>Welcome to Word Counter</center></h1>
+<!doctype html>
+<html lang="en">
+<head>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
+.container{
+ 
+  max-width:600px;
+  margin:auto;
+  padding:10px;
+  font-size:18px;
+
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background-color:#f1f1f1;
+  position:relative;
+  padding-bottom:38px;
+  min-height:100vh;
+}
+
+header{
+  text-align:crnter;
+  background-color:#333;
+  color:#fff;
+  padding:15px;
+}
+
+header h1{
+  
+  margin-bottom:10px;
+}
+
+main{
+  width:90vw;
+  margin:0 auto;
+  padding:30px 20px;
+  /*min-height:calc(100vh - 95px - 38px);*/
+}
+
+form{
+  
+  padding:20px;
+  margin:auto;
+  font-size:20px;
+}
+
+input[type=text]{
+  width:100%;
+  padding:5px;
+  font-size:17px;
+}
+
+input[type=submit]{
+  padding:5px;
+  font-size:18px;
+}
+
+
+textarea{
+  width:100%;
+  height:270px;
+  font-size:20px;
+  margin:auto;
+  resize:none;
+}
+footer{
+  text-align:center;
+  background-color:#333;
+  color:#fff;
+  padding:10px;
+  position: absolute;
+  bottom: 0;
+  width:100%;
+}
+
+</style>
+
+</head>
+<body>
+<header>
+
+<h1 style="color:#a36903;"><center>Word Count</center></h1>
+<p style = "font-family:Piedra;font-size:16px;font-style:italic;"><center>A Simple Word Counter</center></p>
+</header>
+
+<main>
 
 <form action = {% url 'counts'%} > {% csrf_token %}
     <h2>Enter your words here: </h2>
-    <textarea cols='80' rows ='10' name = "fulltext"></textarea>
+    <textarea col=80 row=20 name = "fulltext"></textarea>
     
     <input type = 'submit' value = 'Submit'  />
 
 
 </form>
-<h3><a href = {% url 'about' %}>About</a></h3>
 
+</main>
+
+<footer>
+
+<p> &copy; Aditya Sharma {% now 'Y' %}</p>
+
+</footer>
+
+</html>

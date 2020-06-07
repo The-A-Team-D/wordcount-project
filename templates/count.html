@@ -1,31 +1,118 @@
-<h1><center><u>Your Output</u></center></h1>
-<h1> Your Text : </h1>
-<h2 style = "color:red"><i>{{ text }}</i></h2>
+<!DOCTYPE html>
+<html>
+<body style="background-color: #f6f5ef;">
+<style>
 
-<h1> There are {{ count}} words in your text. </h1>
+table {
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+th {
+
+  background-color: #4CAF50;
+  color: white;
+  
+    
+}
+td {
+  height: 30px;
+   text-align: center; 
+    vertical-align: middle;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 
+body{
+  font-family:Arial,sans-serif;
+  background-color:#f1f1f1;
+  position:relative;
+  padding-bottom:38px;
+  min-height:100vh;
+}
 
-<table align = "center" style = "width:50%"> 
+
+header{
+  text-align:crnter;
+  background-color:#333;
+  color:#fff;
+  padding:15px;
+}
+
+header h1{
+  
+  margin-bottom:10px;
+}
+
+main{
+  width:90vw;
+  margin:0 auto;
+  padding:50px 10px;
+  /*min-height:calc(100vh - 95px - 38px);*/
+}
+
+input[type=submit]{
+  padding:5px;
+  font-size:15px;
+  
+}
+
+
+footer{
+  text-align:center;
+  background-color:#333;
+  color:#fff;
+  padding:10px;
+  position: absolute;
+  bottom: 0;
+  width:100%;
+}
+
+</style>
+
+<header>
+<h1 style="color:#a36903;"><center>Your Result</center></h1>
+</header>
+
+<main>
+<div style="overflow-x:auto;">
+<table align = "center" style = "width:100%"> 
 
 <tr>
-<th style = "text-align:left"><h2><u>Word</u></h2></th>
-<th style = "text-align:left"><h2><u>Count</u></h2></th>
+<th style = "text-align:center"><h2>Word</h2></th>
+<th style = "text-align:center"><h2>Character</h2></th>
+<th style = "text-align:center"><h2>character including spaces</h2></th>
 
 </tr>
 
-{% for word,count in sortedword %}
+
 
 <tr>
-<td>{{word}}</td>
-<td>{{count}}</td>
+<td style="text-align:center"><h2>{{count}}</h2></td>
+<td style="text-align:center"><h2>{{characters}}</h2></td>
+<td style="text-align:center"><h2>{{character}}</h2></td>
 
 </tr>
-
-{% endfor %}
 
 </table>
+<br/>
+<br/>
+<form action="{% url 'home' %}">
+<input type="submit" value="Start again" />
+</form>
+</div>
+</main>
+
+<footer>
+<p> &copy; Aditya Sharma {% now 'Y' %}</p>
+</footer>
 
 
-
-<h3><a href = "{% url 'home' %}">start again</a></h3>
+</html>
