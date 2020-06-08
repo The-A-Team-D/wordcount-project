@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+{% load static %}
 <head>
 <style>
 *{
@@ -18,7 +19,7 @@
 }
 
 body{
-  font-family:Arial,sans-serif;
+  font-family:Helvetica;
   background-color:#f1f1f1;
   position:relative;
   padding-bottom:38px;
@@ -27,7 +28,7 @@ body{
 
 header{
   text-align:crnter;
-  background-color:#333;
+  background-color:#025445;
   color:#fff;
   padding:15px;
 }
@@ -72,13 +73,14 @@ textarea{
 }
 footer{
   text-align:center;
-  background-color:#333;
-  color:#fff;
+  background-color:#025445;
+  color:#000000;
   padding:10px;
   position: absolute;
   bottom: 0;
   width:100%;
 }
+
 
 </style>
 
@@ -97,16 +99,16 @@ footer{
     <textarea col=80 row=20 name = "fulltext"></textarea>
     
     <input type = 'submit' value = 'Submit'  />
-
-
 </form>
 
 </main>
 
 <footer>
-
+<p>  <a href="https://www.facebook.com/The__A__Team"> <img  src="{% static "facebook.png" %}"  height="25" width="25"></a>
+ <a href="https://www.twitter.com/The__A__Team"> <img  src="{% static "twitter.png" %}"  height="25" width="25"></a>
+<a href="mailto:ajaditya0987@gmail.com"><img src="{% static "mail.png" %}"  height="25" width="25"></a>
+</p>
 <p> &copy; Aditya Sharma {% now 'Y' %}</p>
-
 </footer>
 
 </html>

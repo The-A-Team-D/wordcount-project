@@ -3,16 +3,13 @@ from django.shortcuts import render
 import operator
 
 def home(request):
-    
-    return render( request, 'home.html')
+     return render( request, 'home.html')
    
-    
-
 def count(request):
     fulltext = request.GET['fulltext']
     wordlist = fulltext.split()
     
-    # ------------------------new code------------
+    # ------------------------for counting character------------
     a=0
     b=0
     for i in fulltext:
@@ -22,8 +19,9 @@ def count(request):
     character_with_space=a
     character=b
 
-
     #----------------------end----------------
+
+    #--------------------for counting character in text--------------------
     worddictionary = {}
 
     for word in wordlist:
@@ -37,3 +35,4 @@ def count(request):
     
     return render( request, 'count.html',{ 'text':fulltext, 'count': len(wordlist), 'sortedword':sortedword,'character':character_with_space,'characters':character})
 
+#--------------------------------------------------end----------------------------
